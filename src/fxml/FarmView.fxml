@@ -1,0 +1,9 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<HBox fx:id="farmView" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FarmController" style="-fx-background-color: #87CEEB;">
+    <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+        <GridPane fx:id="farmGrid" alignment="CENTER" hgap="2" vgap="2" />
+    </VBox>
+    <VBox fx:id="animalBox" prefWidth="280" spacing="10" style="-fx-background-color: #f5f5dc; -fx-padding: 10; -fx-border-color: black; -fx-border-width: 0 0 0 2;" />
+</HBox>

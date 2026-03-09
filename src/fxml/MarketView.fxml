@@ -1,0 +1,8 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<VBox fx:id="marketView" alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarketController" style="-fx-background-color: #e8f5e9;">
+    <Button text="Acheter Graine Blé (10$)" onAction="#buyWheat" />
+    <Button text="Acheter Graine Maïs (30$)" onAction="#buyCorn" />
+    <Button text="Acheter Vache (150$)" onAction="#buyCow" />
+    <Button text="VENDRE PRODUITS" onAction="#sellAll" />
+</VBox>
