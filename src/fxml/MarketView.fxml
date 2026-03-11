@@ -1,8 +1,40 @@
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
-<VBox fx:id="marketView" alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarketController" style="-fx-background-color: #e8f5e9;">
-    <Button text="Acheter Graine Blé (10$)" onAction="#buyWheat" />
-    <Button text="Acheter Graine Maïs (30$)" onAction="#buyCorn" />
-    <Button text="Acheter Vache (150$)" onAction="#buyCow" />
-    <Button text="VENDRE PRODUITS" onAction="#sellAll" />
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="marketView" alignment="CENTER" spacing="15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarketController" style="-fx-background-color: #e8f5e9; -fx-padding: 20;">
+
+    <Label text="BOUTIQUE D'ACHATS" style="-fx-font-weight: bold; -fx-font-size: 20;" />
+
+    <HBox spacing="10" alignment="CENTER">
+
+
+        <Button text="Graine Blé (10$)" onAction="#buyWheat" />
+        <Button text="Graine Maïs (30$)" onAction="#buyCorn" />
+        <Button text="Graine Carotte (60$)" onAction="#buyCarott" />
+    </HBox>
+    <HBox spacing="20" alignment="CENTER">
+
+        <Button text="Poule (50$)" onAction="#buyChicken" />
+        <Button text="Vache (150$)" onAction="#buyCow" />
+        <Button text="Cochon (300$)" onAction="#buyPig" />
+    </HBox>
+
+    <Separator />
+
+    <Label text="VENTE DE RÉCOLTES (FOOD)" style="-fx-font-weight: bold; -fx-font-size: 18;" />
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Vendre Blé (25$/u)" onAction="#sellWheat" style="-fx-background-color: #fb8c00; -fx-text-fill: white;" />
+        <Button text="Vendre Maïs (60$/u)" onAction="#sellCorn" style="-fx-background-color: #fb8c00; -fx-text-fill: white;" />
+        <Button text="Vendre Carotte (120$/u)" onAction="#sellCarrot" style="-fx-background-color: #fb8c00; -fx-text-fill: white;" />
+    </HBox>
+
+    <Label text="VENTE DE PRODUITS ANIMAUX" style="-fx-font-weight: bold; -fx-font-size: 18;" />
+    <HBox spacing="10" alignment="CENTER">
+
+        <Button text="Vendre Oeufs (40$/u)" onAction="#sellEgg" style="-fx-background-color: #43a047; -fx-text-fill: white;" />
+        <Button text="Vendre Lait (80$/u)" onAction="#sellMilk" style="-fx-background-color: #43a047; -fx-text-fill: white;" />
+        <Button text="Vendre Bacon (150$/u)" onAction="#sellBacon" style="-fx-background-color: #43a047; -fx-text-fill: white;" />
+    </HBox>
 </VBox>

@@ -10,9 +10,9 @@ public class MainController {
     @FXML private Label moneyLabel, seedLabel;
     @FXML private Pane farmView, marketView;
 
-    // Labels de l'inventaire du bas
     @FXML private Label wheatSeedQty, cornSeedQty, carrotSeedQty;
     @FXML private Label wheatFoodQty, cornFoodQty, carrotFoodQty;
+    @FXML private Label eggQty, milkQty, baconQty;
 
     @FXML private FarmController farmViewController;
     @FXML private MarketController marketViewController;
@@ -30,6 +30,7 @@ public class MainController {
         // Listener pour mettre à jour l'inventaire visuel
         gameState.seedStock.addListener((javafx.collections.MapChangeListener<? super String, ? super Integer>) c -> updateInventoryUI());
         gameState.foodStock.addListener((javafx.collections.MapChangeListener<? super String, ? super Integer>) c -> updateInventoryUI());
+        gameState.productStock.addListener((javafx.collections.MapChangeListener<? super String, ? super Integer>) c -> updateInventoryUI());
 
         showFarm();
     }
@@ -42,6 +43,11 @@ public class MainController {
         wheatFoodQty.setText("Blé: " + gameState.foodStock.get("Blé"));
         cornFoodQty.setText("Maïs: " + gameState.foodStock.get("Maïs"));
         carrotFoodQty.setText("Carotte: " + gameState.foodStock.get("Carotte"));
+
+        eggQty.setText("Oeuf: " + gameState.productStock.get("Oeuf"));
+        milkQty.setText("Lait: " + gameState.productStock.get("Lait"));
+        baconQty.setText("Bacon: " + gameState.productStock.get("Bacon"));
+
     }
 
     @FXML public void equipWheat() { gameState.selectedSeedProperty().set("Blé"); }
