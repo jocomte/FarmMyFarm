@@ -8,7 +8,6 @@ public class MarketController {
 
     public void init(GameState state) { this.state = state; }
 
-    // --- LOGIQUE D'ACHAT ---
     @FXML public void buyWheat() { buyS("Blé", 10); }
     @FXML public void buyCorn() { buyS("Maïs", 30); }
     @FXML public void buyCarott() { buyS("Carotte", 60); }
@@ -44,7 +43,6 @@ public class MarketController {
 
 
 
-    // --- NOUVELLE LOGIQUE DE VENTE À LA CARTE ---
 
     @FXML public void sellWheat() { sellFood("Blé", 25); } // Prix de vente du Blé
     @FXML public void sellCorn() { sellFood("Maïs", 60); } // Prix de vente du Maïs
@@ -58,7 +56,7 @@ public class MarketController {
         int qty = state.foodStock.getOrDefault(name, 0);
         if (qty > 0) {
             state.walletProperty().set(state.walletProperty().get() + (qty * price));
-            state.foodStock.put(name, 0); // Vide le stock après vente
+            state.foodStock.put(name, 0);
         }
     }
 
@@ -66,7 +64,7 @@ public class MarketController {
         int qty = state.productStock.getOrDefault(name, 0);
         if (qty > 0) {
             state.walletProperty().set(state.walletProperty().get() + (qty * price));
-            state.productStock.put(name, 0); // Vide le stock après vente
+            state.productStock.put(name, 0);
         }
     }
 }

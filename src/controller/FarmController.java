@@ -15,10 +15,10 @@ public class FarmController {
 
     private static final String[] STAGE_ICONS = { "🌱", "🌿", "🌾", "✅" };
     private static final String[] STAGE_BG = {
-        "#3d2a0e",  // stage 0 — terre fraîche
-        "#2d3d0e",  // stage 1 — début pousse
-        "#3a4d10",  // stage 2 — bonne croissance
-        "#4a6d10",  // stage 3 — prêt à récolter
+        "#3d2a0e",
+        "#2d3d0e",
+        "#3a4d10",
+        "#4a6d10",
     };
 
     private StackPane[] cellRefs = new StackPane[64];

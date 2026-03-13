@@ -2,13 +2,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<!-- fx:controller doit être sur l'élément RACINE -->
 <VBox fx:id="marketView" alignment="TOP_CENTER" spacing="20"
     xmlns:fx="http://javafx.com/fxml/1"
     fx:controller="controller.MarketController"
     style="-fx-background-color: #1a1208; -fx-padding: 30 60 30 60;">
 
-    <!-- Titre -->
     <Label text="🛒  MARCHÉ DU VILLAGE"
         style="-fx-text-fill: #f5c842; -fx-font-size: 26px; -fx-font-weight: bold;
                -fx-font-family: 'Georgia'; -fx-effect: dropshadow(gaussian, #000, 8, 0.6, 1, 2);"/>
@@ -18,13 +16,11 @@
 
     <Separator style="-fx-background-color: #5a3a1a;"/>
 
-    <!-- ── Section Achats ── -->
     <VBox spacing="12">
         <Label text="▸  ACHETER"
             style="-fx-text-fill: #c8860a; -fx-font-size: 14px; -fx-font-weight: bold;
                    -fx-font-family: 'Georgia';"/>
 
-        <!-- Graines -->
         <HBox spacing="12" alignment="CENTER_LEFT">
             <Label text="Graines"
                 style="-fx-text-fill: #8a9a70; -fx-font-size: 12px; -fx-min-width: 80;"/>
@@ -45,7 +41,6 @@
                        -fx-border-radius: 8; -fx-padding: 8 18; -fx-cursor: hand;"/>
         </HBox>
 
-        <!-- Animaux -->
         <HBox spacing="12" alignment="CENTER_LEFT">
             <Label text="Animaux"
                 style="-fx-text-fill: #8a9a70; -fx-font-size: 12px; -fx-min-width: 80;"/>
@@ -69,13 +64,11 @@
 
     <Separator style="-fx-background-color: #5a3a1a;"/>
 
-    <!-- ── Section Vente ── -->
     <VBox spacing="12">
         <Label text="▸  VENDRE"
             style="-fx-text-fill: #c8860a; -fx-font-size: 14px; -fx-font-weight: bold;
                    -fx-font-family: 'Georgia';"/>
 
-        <!-- Récoltes -->
         <HBox spacing="12" alignment="CENTER_LEFT">
             <Label text="Récoltes"
                 style="-fx-text-fill: #8a9a70; -fx-font-size: 12px; -fx-min-width: 80;"/>
@@ -96,7 +89,6 @@
                        -fx-border-radius: 8; -fx-padding: 8 18; -fx-cursor: hand;"/>
         </HBox>
 
-        <!-- Produits animaux -->
         <HBox spacing="12" alignment="CENTER_LEFT">
             <Label text="Produits"
                 style="-fx-text-fill: #8a9a70; -fx-font-size: 12px; -fx-min-width: 80;"/>

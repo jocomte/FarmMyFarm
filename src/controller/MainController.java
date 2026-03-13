@@ -37,14 +37,12 @@ public class MainController {
         gameState.productStock.addListener(
                 (javafx.collections.MapChangeListener<? super String, ? super Integer>) c -> updateInventoryUI());
 
-        // Indique si une save existe au démarrage
         saveStatusLabel.setText(SaveManager.saveExists() ? "💾 Save existante" : "Pas de save");
 
         updateInventoryUI();
         showFarm();
     }
 
-    // ── SAVE ──────────────────────────────────────────────────
 
     @FXML
     public void saveGame() {
@@ -58,7 +56,6 @@ public class MainController {
         }
     }
 
-    // ── LOAD ──────────────────────────────────────────────────
 
     @FXML
     public void loadGame() {
@@ -79,7 +76,6 @@ public class MainController {
         }
     }
 
-    // ── Inventaire ────────────────────────────────────────────
 
     private void updateInventoryUI() {
         wheatSeedQty.setText("x"  + gameState.seedStock.getOrDefault("Blé", 0));
@@ -95,7 +91,6 @@ public class MainController {
         baconQty.setText(String.valueOf(gameState.productStock.getOrDefault("Bacon", 0)));
     }
 
-    // ── Navigation ────────────────────────────────────────────
 
     @FXML public void equipWheat()  { gameState.selectedSeedProperty().set("Blé"); }
     @FXML public void equipCorn()   { gameState.selectedSeedProperty().set("Maïs"); }
@@ -104,7 +99,6 @@ public class MainController {
     @FXML public void showFarm()   { farmView.setVisible(true);  marketView.setVisible(false); }
     @FXML public void showMarket() { farmView.setVisible(false); marketView.setVisible(true); }
 
-    // ── Alertes ───────────────────────────────────────────────
 
     private void showInfo(String title, String msg) {
         Alert a = new Alert(AlertType.INFORMATION);

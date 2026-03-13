@@ -5,10 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Structure de données plate (pas de JavaFX properties) pour la sérialisation JSON.
- * SaveManager convertit GameState <-> SaveData.
- */
+
 public class SaveData {
 
     public double wallet;
@@ -20,18 +17,15 @@ public class SaveData {
 
     public boolean[] unlocked = new boolean[64];
 
-    // Parcelles : null si vide, sinon les infos de la plante
     public PlotData[] plots = new PlotData[64];
 
-    // Animaux
     public List<AnimalData> animals = new ArrayList<>();
 
-    // ── Sous-structures ────────────────────────────────────────
 
     public static class PlotData {
         public String name;
         public int    growDuration;
-        public long   plantTime;   // System.currentTimeMillis() / 1000 au moment du plant
+        public long   plantTime;
 
         public PlotData() {}
         public PlotData(String name, int growDuration, long plantTime) {

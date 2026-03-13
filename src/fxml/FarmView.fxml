@@ -9,7 +9,6 @@
     fx:controller="controller.FarmController"
     style="-fx-background-color: #1a1208;">
 
-    <!-- ── Grille de culture ── -->
     <VBox alignment="CENTER" HBox.hgrow="ALWAYS"
         style="-fx-background-color: radial-gradient(center 50% 50%, radius 80%, #2a1f0e, #1a1208);
                -fx-padding: 20;">
@@ -22,7 +21,6 @@
                    -fx-padding: 10;"/>
     </VBox>
 
-    <!-- ── Panneau animaux ── -->
     <VBox fx:id="animalBox" prefWidth="260" spacing="10"
         style="-fx-background-color: linear-gradient(to bottom, #1e140a, #2c1a0e);
                -fx-padding: 16; -fx-border-color: #c8860a; -fx-border-width: 0 0 0 2;">

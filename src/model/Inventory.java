@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Inventory {
-    // Stocke le nom de la ressource et sa quantité
     private Map<String, Integer> resources = new HashMap<>();
 
     public void addResource(String name, int amount) {

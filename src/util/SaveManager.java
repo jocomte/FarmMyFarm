@@ -7,23 +7,13 @@ import model.*;
 import java.io.*;
 import java.nio.file.*;
 
-/**
- * Gère la sauvegarde et le chargement du GameState dans un fichier JSON.
- *
- * Fichier de save : %APPDATA%/FarmMyFarm/save.json  (Windows)
- *                   ~/Library/.../FarmMyFarm/save.json (Mac)
- *                   ~/.FarmMyFarm/save.json             (Linux)
- *
- * Dépendance requise dans pom.xml / build.gradle :
- *   implementation 'com.google.code.gson:gson:2.10.1'
- */
+
 public class SaveManager {
 
     private static final String APP_NAME  = "FarmMyFarm";
     private static final String FILE_NAME = "save.json";
     private static final Gson   GSON      = new GsonBuilder().setPrettyPrinting().create();
 
-    // ── Chemin du fichier de save ──────────────────────────────
 
     public static Path getSavePath() {
         String os   = System.getProperty("os.name").toLowerCase();
@@ -52,10 +42,6 @@ public class SaveManager {
 
     // ── LOAD ──────────────────────────────────────────────────
 
-    /**
-     * Charge la save et applique les données au GameState fourni.
-     * @return true si la save a été trouvée et chargée, false sinon.
-     */
     public static boolean load(GameState state) throws IOException {
         Path path = getSavePath();
         if (!Files.exists(path)) return false;
@@ -69,7 +55,6 @@ public class SaveManager {
         return Files.exists(getSavePath());
     }
 
-    // ── Conversion GameState → SaveData ───────────────────────
 
     private static SaveData toSaveData(GameState state) {
         SaveData data = new SaveData();
@@ -82,7 +67,6 @@ public class SaveManager {
         data.foodStock.putAll(state.foodStock);
         data.productStock.putAll(state.productStock);
 
-        // Parcelles
         for (int i = 0; i < 64; i++) {
             Crop c = state.plots[i];
             if (c != null) {
@@ -90,7 +74,6 @@ public class SaveManager {
             }
         }
 
-        // Animaux
         for (Animal a : state.myAnimals) {
             data.animals.add(new SaveData.AnimalData(
                 a.getSpecies(), a.getFoodNeeded(), a.getResourceProduced(),
@@ -101,7 +84,6 @@ public class SaveManager {
         return data;
     }
 
-    // ── Conversion SaveData → GameState ───────────────────────
 
     private static void applyToState(SaveData data, GameState state) {
         state.walletProperty().set(data.wallet);
@@ -113,7 +95,6 @@ public class SaveManager {
         state.foodStock.putAll(data.foodStock);
         state.productStock.putAll(data.productStock);
 
-        // Parcelles — on recrée les Crop avec leur plantTime d'origine
         for (int i = 0; i < 64; i++) {
             if (data.plots[i] != null) {
                 state.plots[i] = Crop.restore(
@@ -126,7 +107,6 @@ public class SaveManager {
             }
         }
 
-        // Animaux
         state.myAnimals.clear();
         if (data.animals != null) {
             for (SaveData.AnimalData ad : data.animals) {

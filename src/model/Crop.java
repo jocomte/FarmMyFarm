@@ -6,21 +6,18 @@ public class Crop {
     private long plantTime;
     private int growDuration;
 
-    /** Constructeur normal — plante maintenant. */
     public Crop(String name, int growDuration) {
         this.name         = name;
         this.growDuration = growDuration;
         this.plantTime    = System.currentTimeMillis() / 1000;
     }
 
-    /** Constructeur privé — restaure depuis une save. */
     private Crop(String name, int growDuration, long plantTime) {
         this.name         = name;
         this.growDuration = growDuration;
         this.plantTime    = plantTime;
     }
 
-    /** Utilisé par SaveManager pour recréer une plante avec son plantTime d'origine. */
     public static Crop restore(String name, int growDuration, long plantTime) {
         Crop c = new Crop(name, growDuration, plantTime);
         c.update();

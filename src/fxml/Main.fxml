@@ -12,7 +12,6 @@
     xmlns:fx="http://javafx.com/fxml/1"
     fx:controller="controller.MainController">
 
-    <!-- ══════════════════════  HEADER  ══════════════════════ -->
     <top>
         <VBox style="-fx-background-color: linear-gradient(to bottom, #2c1a0e, #1a1208);
                      -fx-border-color: #c8860a; -fx-border-width: 0 0 3 0;
@@ -20,7 +19,6 @@
                      -fx-effect: dropshadow(gaussian, #000, 12, 0.5, 0, 4);">
             <HBox spacing="0" alignment="CENTER_LEFT">
 
-                <!-- Logo -->
                 <Label text="🌾 FARM MY FARM"
                     style="-fx-text-fill: #f5c842; -fx-font-size: 22px; -fx-font-weight: bold;
                            -fx-font-family: 'Georgia';
@@ -28,7 +26,6 @@
 
                 <Region HBox.hgrow="ALWAYS"/>
 
-                <!-- Argent -->
                 <HBox alignment="CENTER" spacing="6"
                     style="-fx-background-color: rgba(0,0,0,0.4); -fx-background-radius: 20;
                            -fx-border-color: #c8860a; -fx-border-radius: 20; -fx-border-width: 1.5;
@@ -41,7 +38,6 @@
 
                 <Region prefWidth="12"/>
 
-                <!-- Graine équipée -->
                 <HBox alignment="CENTER" spacing="6"
                     style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 20;
                            -fx-border-color: #7cb87c; -fx-border-radius: 20; -fx-border-width: 1.5;
@@ -53,7 +49,6 @@
 
                 <Region prefWidth="20"/>
 
-                <!-- Boutons nav -->
                 <HBox spacing="8" alignment="CENTER">
                     <Button onAction="#showFarm" text="🏡  MA FERME"
                         style="-fx-background-color: #5a3a1a; -fx-text-fill: #f5c842;
@@ -73,7 +68,6 @@
                 <Separator orientation="VERTICAL" style="-fx-background-color: #5a3a1a;"/>
                 <Region prefWidth="12"/>
 
-                <!-- Boutons Save / Load -->
                 <HBox spacing="8" alignment="CENTER">
                     <Button onAction="#saveGame" text="💾  SAUVER"
                         style="-fx-background-color: #1a2a3a; -fx-text-fill: #7ab8f5;
@@ -87,7 +81,6 @@
                                -fx-background-radius: 8; -fx-border-color: #6a3a9a;
                                -fx-border-radius: 8; -fx-border-width: 1.5;
                                -fx-padding: 8 16; -fx-cursor: hand;"/>
-                    <!-- Statut discret -->
                     <Label fx:id="saveStatusLabel" text=""
                         style="-fx-text-fill: #6a8a6a; -fx-font-size: 11px; -fx-font-family: 'Georgia';"/>
                 </HBox>
@@ -96,7 +89,6 @@
         </VBox>
     </top>
 
-    <!-- ══════════════════════  CENTRE  ══════════════════════ -->
     <center>
         <StackPane style="-fx-background-color: #1a1208;">
             <fx:include fx:id="farmView" source="FarmView.fxml" />
@@ -104,7 +96,6 @@
         </StackPane>
     </center>
 
-    <!-- ══════════════════════  INVENTAIRE BAS  ══════════════════════ -->
     <bottom>
         <HBox alignment="CENTER" spacing="30"
             style="-fx-background-color: linear-gradient(to top, #2c1a0e, #1a1208);
@@ -112,7 +103,6 @@
                    -fx-border-color: #c8860a; -fx-border-width: 3 0 0 0;
                    -fx-effect: dropshadow(gaussian, #000, 10, 0.5, 0, -3);">
 
-            <!-- GRAINES -->
             <VBox spacing="6" alignment="CENTER">
                 <Label text="▸ GRAINES"
                     style="-fx-text-fill: #c8860a; -fx-font-weight: bold; -fx-font-size: 11px;
@@ -150,7 +140,6 @@
 
             <Separator orientation="VERTICAL" style="-fx-background-color: #5a3a1a;"/>
 
-            <!-- NOURRITURE -->
             <VBox spacing="6" alignment="CENTER">
                 <Label text="▸ RÉSERVES"
                     style="-fx-text-fill: #c8860a; -fx-font-weight: bold; -fx-font-size: 11px;
@@ -182,7 +171,6 @@
 
             <Separator orientation="VERTICAL" style="-fx-background-color: #5a3a1a;"/>
 
-            <!-- PRODUITS -->
             <VBox spacing="6" alignment="CENTER">
                 <Label text="▸ PRODUITS"
                     style="-fx-text-fill: #c8860a; -fx-font-weight: bold; -fx-font-size: 11px;
