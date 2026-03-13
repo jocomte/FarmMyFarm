@@ -20,7 +20,7 @@ public class GameState {
         for (int i = 0; i < 5; i++) unlocked[i] = true; // 5 zones gratuites [cite: 8]
         seedStock.put("Blé", 0); seedStock.put("Maïs", 0); seedStock.put("Carotte", 0);
         foodStock.put("Blé", 0); foodStock.put("Maïs", 0); foodStock.put("Carotte", 0);
-        productStock.put("Lait", 0); productStock.put("Œuf", 0); productStock.put("Bacon", 0);
+        productStock.put("Lait", 0); productStock.put("Oeuf", 0); productStock.put("Bacon", 0);
     }
 
     public DoubleProperty walletProperty() { return wallet; }
